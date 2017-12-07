@@ -1,0 +1,29 @@
+version: '{build}'
+image: Visual Studio 2017
+branches:
+  except:
+    - /.+[\-.]wip$/
+    - wip
+pull_requests:
+  do_not_increment_build_number: true
+skip_commits:
+  files:
+    - '*.md'
+    - '*.txt'
+    - '.editorconfig'
+build_script:
+- ps: .\build.cmd
+artifacts:
+- path: bin\Debug
+  name: VisualFizzler-dbg
+  type: zip
+- path: bin\Release
+  name: VisualFizzler
+  type: zip
+notifications:
+- provider: Email
+  to:
+  - raboof-ci@googlegroups.com
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: false

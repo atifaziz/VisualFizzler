@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualFizzler", "src\VisualFizzler.csproj", "{46AA901E-21D1-4720-B173-532B91105CE7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6DCA7589-9DDD-4C86-963C-E0EDC364C615}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		appveyor.yml = appveyor.yml
+		build.cmd = build.cmd
+		COPYING.LESSER.txt = COPYING.LESSER.txt
+		COPYING.txt = COPYING.txt
+		msbuild.cmd = msbuild.cmd
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46AA901E-21D1-4720-B173-532B91105CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46AA901E-21D1-4720-B173-532B91105CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46AA901E-21D1-4720-B173-532B91105CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46AA901E-21D1-4720-B173-532B91105CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2278061E-AFA0-49A3-AA61-FF8C56306435}
+	EndGlobalSection
+EndGlobal
