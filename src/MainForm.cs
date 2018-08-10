@@ -28,6 +28,7 @@ namespace VisualFizzler
     using System.Diagnostics;
     using System.Drawing;
     using System.Globalization;
+    using System.IO;
     using System.Linq;
     using System.Net;
     using System.Net.Mime;
@@ -72,9 +73,10 @@ namespace VisualFizzler
             if (_openFileDialog.ShowDialog(this) != DialogResult.OK)
                 return;
 
+            var html = File.ReadAllText(_openFileDialog.FileName);
             var document = new HtmlDocument();
-            document.Load2(_openFileDialog.FileName);
-            Open(document);
+            document.LoadHtml2(html);
+            Open(document, html);
         }
 
         private void ImportFromWebMenu_Click(object sender, EventArgs args)
@@ -216,7 +218,7 @@ namespace VisualFizzler
             {
                 var document = new HtmlDocument();
                 document.LoadHtml2(content);
-                Open(document);
+                Open(document, content);
             }
 
             _lastKnownGoodImportedUrl = url;
@@ -232,11 +234,11 @@ namespace VisualFizzler
             Process.Start("https://github.com/atifaziz/Fizzler");
         }
 
-        private void Open(HtmlDocument document)
+        private void Open(HtmlDocument document, string html)
         {
             _document = document;
             _documentBox.Clear();
-            _documentBox.Text = document.DocumentNode.OuterHtml;
+            _documentBox.Text = html;
             _selectorMatches = null;
             HighlightMarkup(_documentBox, Color.Blue, Color.FromArgb(163, 21, 21), Color.Red);
             Evaluate();
